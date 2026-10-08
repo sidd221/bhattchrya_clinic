@@ -13,8 +13,9 @@ import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 
-// Code-split below-the-fold heavy components and on-demand modals
-const Gallery = lazy(() => import('./components/Gallery').then((m) => ({ default: m.Gallery })));
+import { Gallery } from './components/Gallery';
+
+// Code-split modals and error views
 const BookingModal = lazy(() => import('./components/BookingModal').then((m) => ({ default: m.BookingModal })));
 const NotFound = lazy(() => import('./components/NotFound').then((m) => ({ default: m.NotFound })));
 
@@ -197,43 +198,27 @@ export default function App() {
         <About onLearnMore={handleLearnMoreProcess} />
 
         {/* 4-Step Consultation Journey (Process) */}
-        <div className="section-deferred">
-          <Process onOpenBooking={handleOpenBooking} />
-        </div>
+        <Process onOpenBooking={handleOpenBooking} />
 
         {/* Why Choose Us */}
-        <div className="section-deferred">
-          <WhyChooseUs />
-        </div>
+        <WhyChooseUs />
 
         {/* Treatments & Areas We Care For */}
-        <div className="section-deferred">
-          <Treatments
-            onBookConsultation={handleOpenBooking}
-          />
-        </div>
+        <Treatments
+          onBookConsultation={handleOpenBooking}
+        />
 
-        {/* Gallery Visual Tour (Code-split with GSAP) */}
-        <div className="section-deferred">
-          <Suspense fallback={<div className="py-20 min-h-[300px]" />}>
-            <Gallery />
-          </Suspense>
-        </div>
+        {/* Gallery Visual Tour */}
+        <Gallery />
 
         {/* Patient Testimonials & Google Reviews */}
-        <div className="section-deferred">
-          <Testimonials />
-        </div>
+        <Testimonials />
 
         {/* Frequently Asked Questions */}
-        <div className="section-deferred">
-          <FAQ onOpenBooking={handleOpenBooking} />
-        </div>
+        <FAQ onOpenBooking={handleOpenBooking} />
 
         {/* Contact, Maps & Embedded Consultation Form */}
-        <div className="section-deferred">
-          <Contact initialTreatment={selectedTreatmentForBooking} />
-        </div>
+        <Contact initialTreatment={selectedTreatmentForBooking} />
       </main>
 
       {/* Footer & Legal Notices */}

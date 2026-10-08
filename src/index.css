@@ -43,10 +43,10 @@ h1, h2, h3, .font-serif {
   font-family: var(--font-serif);
 }
 
-/* Content visibility optimization: browser skips rendering off-screen DOM until scrolled near */
-.section-deferred {
-  content-visibility: auto;
-  contain-intrinsic-size: 1px 800px;
+/* Ensure fixed navbar never obscures section headings during anchor navigation */
+section[id],
+div[id] {
+  scroll-margin-top: 5rem;
 }
 
 /* Custom subtle scrollbar */

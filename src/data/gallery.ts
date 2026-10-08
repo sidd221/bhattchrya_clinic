@@ -4,7 +4,7 @@ export interface GalleryItem {
   category: 'Clinic' | 'Consultation Area' | 'Reception' | 'Treatment Environment' | 'Doctor' | 'Patient Experience';
   caption: string;
   alt: string;
-  src?: string; // Optional real image path
+  src: string;
   visualTheme: {
     bgGradient: string;
     accentColor: string;
@@ -25,154 +25,154 @@ export const galleryCategories = [
 export const galleryData: GalleryItem[] = [
   {
     id: "gal-1",
-    title: "Quiet Consultation Chamber",
-    category: "Consultation Area",
-    caption: "Designed for open, unhurried dialogues in a private, natural daylight-filled setting.",
-    alt: "Private homeopathic consultation room with natural sunlight and comfortable seating",
-    src: "/gallery/gallery-1.jpg",
-    visualTheme: {
-      bgGradient: "from-[#1F4232] to-[#122A1F]",
-      accentColor: "#D4B07B",
-      motif: "room"
-    }
-  },
-  {
-    id: "gal-2",
-    title: "Serene Welcoming Lounge",
-    category: "Reception",
-    caption: "A calming arrival space featuring warm earthen tones, living botanical plants, and herbal tea.",
-    alt: "Calm and clean clinic reception lounge with comfortable seating and botanical greenery",
-    src: "/gallery/gallery-2.jpg",
-    visualTheme: {
-      bgGradient: "from-[#2A4D3B] to-[#1B3628]",
-      accentColor: "#A3C8B0",
-      motif: "reception"
-    }
-  },
-  {
-    id: "gal-3",
-    title: "The Classical Dispensary",
-    category: "Treatment Environment",
-    caption: "Carefully curated pharmacopoeia of classical homeopathic dilutions and mother tinctures.",
-    alt: "Organized dispensary of homeopathic remedies, amber glass bottles, and tinctures",
-    src: "/gallery/gallery-3.jpg",
-    visualTheme: {
-      bgGradient: "from-[#1B382B] to-[#0E2219]",
-      accentColor: "#E2C99D",
-      motif: "botanical"
-    }
-  },
-  {
-    id: "gal-4",
-    title: "Doctor's Study & Repertory",
+    title: "Late Dr. B. Bhattacharyya",
     category: "Doctor",
-    caption: "Classical homeopathic repertories, materia medica volumes, and digital case-taking records.",
-    alt: "Doctor's consultation desk with case journals, repertory books, and natural lighting",
-    src: "/gallery/gallery-4.jpg",
-    visualTheme: {
-      bgGradient: "from-[#264B39] to-[#163325]",
-      accentColor: "#B7D1BF",
-      motif: "books"
-    }
-  },
-  {
-    id: "gal-5",
-    title: "Tranquil Patient Waiting Corner",
-    category: "Patient Experience",
-    caption: "Every interior touchpoint is arranged to minimise clinical anxiety and foster calm.",
-    alt: "Warm reading corner in patient lounge with wellness literature and comfortable armchair",
-    src: "/gallery/gallery-5.jpg",
-    visualTheme: {
-      bgGradient: "from-[#234534] to-[#132A1F]",
-      accentColor: "#CDB083",
-      motif: "lounge"
-    }
-  },
-  {
-    id: "gal-6",
-    title: "Botanical Pharmacopoeia",
-    category: "Treatment Environment",
-    caption: "Authentic, certified homeopathic preparations prepared according to classical standards.",
-    alt: "Botanical apothecary with certified homeopathic mother tinctures",
-    src: "/gallery/gallery-6.jpg",
-    visualTheme: {
-      bgGradient: "from-[#1E3F30] to-[#0F261C]",
-      accentColor: "#9FC4AC",
-      motif: "botanical"
-    }
-  },
-  {
-    id: "gal-7",
-    title: "Diagnostic Examination Room",
-    category: "Consultation Area",
-    caption: "Equipped with diagnostic equipment to complement classical constitutional case taking.",
-    alt: "Private diagnostic and clinical examination room",
-    src: "/gallery/gallery-7.jpg",
+    caption: "Honouring our venerable founder Late Dr. B. Bhattacharyya, who established the clinic's classical homeopathic legacy in 1940.",
+    alt: "Revered Founder Late Dr. B. Bhattacharyya Memorial Portrait with Garland",
+    src: "/gallery-1.jpeg",
     visualTheme: {
       bgGradient: "from-[#1F4232] to-[#122A1F]",
       accentColor: "#D4B07B",
-      motif: "room"
-    }
-  },
-  {
-    id: "gal-8",
-    title: "Reception & Welcome Desk",
-    category: "Reception",
-    caption: "Coordinated appointments, unhurried patient intake, and prompt dispatch of courier medicines.",
-    alt: "Front office reception and patient appointment desk",
-    src: "/gallery/gallery-8.jpg",
-    visualTheme: {
-      bgGradient: "from-[#2A4D3B] to-[#1B3628]",
-      accentColor: "#A3C8B0",
-      motif: "reception"
-    }
-  },
-  {
-    id: "gal-9",
-    title: "Clinic Entryway & Grounds",
-    category: "Clinic",
-    caption: "Centrally located in East Patel Nagar, Patna with quiet and accessible ground access.",
-    alt: "Ground floor clinic entrance with welcoming environment",
-    src: "/gallery/gallery-9.jpg",
-    visualTheme: {
-      bgGradient: "from-[#1E3F30] to-[#0F261C]",
-      accentColor: "#9FC4AC",
       motif: "desk"
     }
   },
   {
-    id: "gal-10",
-    title: "Constitutional Intake Desk",
-    category: "Consultation Area",
-    caption: "Holistic assessment connecting physiological reports with constitutional health profile.",
-    alt: "Case-taking desk with clinical reference materials",
-    src: "/gallery/gallery-10.jpg",
+    id: "gal-2",
+    title: "Late Dr. Anupam Bhattacharyya",
+    category: "Doctor",
+    caption: "Remembering our visionary senior physician whose compassionate care and devotion shaped our healing tradition.",
+    alt: "Memorial portrait of Late Dr. Anupam Bhattacharyya with floral garland",
+    src: "/gallery-2.jpeg",
     visualTheme: {
-      bgGradient: "from-[#234534] to-[#132A1F]",
-      accentColor: "#CDB083",
-      motif: "books"
+      bgGradient: "from-[#2A4D3B] to-[#1B3628]",
+      accentColor: "#A3C8B0",
+      motif: "desk"
     }
   },
   {
-    id: "gal-11",
-    title: "Herbal & Mother Tincture Archive",
-    category: "Treatment Environment",
-    caption: "Dedicated storage of potentised dilutions and organic mother tinctures preserved in controlled conditions.",
-    alt: "Homeopathic tincture library and remedy preparation area",
-    src: "/gallery/gallery-11.jpg",
+    id: "gal-3",
+    title: "Clinic Inauguration & Team",
+    category: "Clinic",
+    caption: "Auspicious opening ceremony with Dr. Pankaj Kumar, Dr. Pradeep, and staff at the Patel Nagar, Patna clinic.",
+    alt: "Clinic inauguration ceremony gathering with senior doctors and team",
+    src: "/gallery-3.jpeg",
     visualTheme: {
       bgGradient: "from-[#1B382B] to-[#0E2219]",
       accentColor: "#E2C99D",
+      motif: "room"
+    }
+  },
+  {
+    id: "gal-4",
+    title: "Specialized Treatments Guide",
+    category: "Treatment Environment",
+    caption: "Clinical overview of proven homeopathic care for Asthma, Kidney Stone, Arthritis, PCOD, Piles, Sinus, and Migraine.",
+    alt: "Hindi clinical treatment guide poster for chronic illnesses and ailments",
+    src: "/gallery-4.jpeg",
+    visualTheme: {
+      bgGradient: "from-[#264B39] to-[#163325]",
+      accentColor: "#B7D1BF",
       motif: "botanical"
     }
   },
   {
-    id: "gal-12",
-    title: "Patient Wellness Sanctuary",
+    id: "gal-5",
+    title: "Opening Ceremony Blessing",
+    category: "Clinic",
+    caption: "Traditional lamp lighting and opening blessings commemorating the founding principles of our Patna clinic.",
+    alt: "Opening lamp lighting and team blessing at Dr. Bhattacharyya Homeopathy Clinic",
+    src: "/gallery-5.jpeg",
+    visualTheme: {
+      bgGradient: "from-[#234534] to-[#132A1F]",
+      accentColor: "#CDB083",
+      motif: "room"
+    }
+  },
+  {
+    id: "gal-6",
+    title: "Senior Doctors Consultation Chamber",
+    category: "Consultation Area",
+    caption: "Dr. Pankaj Kumar and Dr. Pradeep conducting thorough constitutional case-taking in the main consultation study chamber.",
+    alt: "Dr. Pankaj Kumar and Dr. Pradeep seated at consultation desk with medical reference books",
+    src: "/gallery-6.jpeg",
+    visualTheme: {
+      bgGradient: "from-[#1E3F30] to-[#0F261C]",
+      accentColor: "#9FC4AC",
+      motif: "books"
+    }
+  },
+  {
+    id: "gal-7",
+    title: "Clinic Medical Staff & Reception",
+    category: "Clinic",
+    caption: "Our caring healthcare team and clinical coordinators dedicated to patient well-being at East Patel Nagar, Patna.",
+    alt: "Clinic medical and support staff gathered at the clinic entrance",
+    src: "/gallery-7.jpeg",
+    visualTheme: {
+      bgGradient: "from-[#1F4232] to-[#122A1F]",
+      accentColor: "#D4B07B",
+      motif: "reception"
+    }
+  },
+  {
+    id: "gal-8",
+    title: "Dr. Pankaj Kumar & Dr. Pradeep",
+    category: "Doctor",
+    caption: "Senior homeopathic physicians carrying forward generations of classical clinical mastery and holistic healing.",
+    alt: "Dr. Pankaj Kumar and Dr. Pradeep beside founder memorial busts",
+    src: "/gallery-8.jpeg",
+    visualTheme: {
+      bgGradient: "from-[#2A4D3B] to-[#1B3628]",
+      accentColor: "#A3C8B0",
+      motif: "desk"
+    }
+  },
+  {
+    id: "gal-9",
+    title: "Inaugural Felicitation & Welcome",
+    category: "Clinic",
+    caption: "Honouring our medical team with traditional floral felicitations during the clinic opening ceremony.",
+    alt: "Floral bouquet felicitation ceremony with consulting doctors and guests",
+    src: "/gallery-9.jpeg",
+    visualTheme: {
+      bgGradient: "from-[#1E3F30] to-[#0F261C]",
+      accentColor: "#9FC4AC",
+      motif: "room"
+    }
+  },
+  {
+    id: "gal-10",
+    title: "Specialized Clinical Scope",
+    category: "Treatment Environment",
+    caption: "Specialized constitutional treatment scope spanning Tonsils, Spondylosis, Liver disorders, Allergies, Prostate, and UTI.",
+    alt: "Clinical scope chart showing homeopathic treatment for specialized conditions",
+    src: "/gallery-10.jpeg",
+    visualTheme: {
+      bgGradient: "from-[#234534] to-[#132A1F]",
+      accentColor: "#CDB083",
+      motif: "botanical"
+    }
+  },
+  {
+    id: "gal-11",
+    title: "Clinical Case: Skin & Vitiligo Results",
     category: "Patient Experience",
-    caption: "A serene recovery and dialogue space fostering calm and holistic healing for patients and families.",
-    alt: "Peaceful patient recovery and consultation lounge",
-    src: "/gallery/gallery-12.jpg",
+    caption: "Documented case outcome: Noticeable repigmentation and skin recovery achieved through constitutional homeopathic remedies.",
+    alt: "Clinical before and after recovery comparison of facial skin vitiligo treatment",
+    src: "/gallery-11.png",
+    visualTheme: {
+      bgGradient: "from-[#1B382B] to-[#0E2219]",
+      accentColor: "#E2C99D",
+      motif: "lounge"
+    }
+  },
+  {
+    id: "gal-12",
+    title: "Clinical Case: Persistent Nail Recovery",
+    category: "Patient Experience",
+    caption: "Documented case outcome: Complete resolution of chronic periungual nail fold condition with pure constitutional homeopathy.",
+    alt: "Clinical before and after comparison of chronic nail fold skin condition completely healed",
+    src: "/gallery-12.png",
     visualTheme: {
       bgGradient: "from-[#2A4D3B] to-[#1B3628]",
       accentColor: "#A3C8B0",

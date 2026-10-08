@@ -309,18 +309,29 @@ export default function SocialCards({
           {cards.map((card, index) => {
             const cardContent = (
               <div
-                className="relative w-full h-full overflow-hidden rounded-2xl shadow-xl border border-white/40 dark:border-white/10 group/card bg-[#1C3627]"
+                className="relative w-full h-full overflow-hidden rounded-2xl shadow-xl border border-white/20 group/card bg-[#0A1B13] flex items-center justify-center cursor-pointer select-none"
                 onClick={() => onCardClick && onCardClick(index)}
+                title={card.title ? `${card.title} - Click to expand` : undefined}
               >
+                {/* Ambient blurred backdrop that matches image colors */}
                 <img
                   src={card.imgUrl}
-                  loading="lazy"
-                  decoding="async"
-                  width={400}
-                  height={560}
-                  alt={card.alt || `Card ${index}`}
-                  className="absolute inset-0 w-full h-full object-cover z-10 transition-transform duration-500 group-hover/card:scale-105"
+                  aria-hidden="true"
+                  alt=""
+                  className="absolute inset-0 w-full h-full object-cover blur-xl opacity-35 scale-125 transition-transform duration-700 group-hover/card:scale-135 select-none pointer-events-none"
                 />
+                <div className="absolute inset-0 bg-[#07150E]/40 pointer-events-none" />
+
+                {/* Crisp, contained, uncropped pure foreground image */}
+                <div className="relative z-10 w-full h-full flex items-center justify-center p-2.5 sm:p-3">
+                  <img
+                    src={card.imgUrl}
+                    loading="lazy"
+                    decoding="async"
+                    alt={card.alt || card.title || `Gallery image ${index + 1}`}
+                    className="max-w-full max-h-full w-auto h-auto object-contain drop-shadow-md select-none transition-transform duration-500 group-hover/card:scale-[1.03]"
+                  />
+                </div>
               </div>
             );
 

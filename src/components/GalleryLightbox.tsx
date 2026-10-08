@@ -99,18 +99,28 @@ export const GalleryLightbox: React.FC<GalleryLightboxProps> = ({
       {/* Center Lightbox Card */}
       <div className="relative z-40 max-w-4xl w-full bg-[#183628] rounded-2xl overflow-hidden border border-white/15 shadow-2xl flex flex-col">
         {/* Visual Slot */}
-        <div className="relative aspect-16/9 sm:aspect-16/10 bg-gradient-to-br from-[#1E4332] via-[#143324] to-[#0A1F16] flex items-center justify-center p-8 overflow-hidden">
+        <div className="relative w-full h-[52vh] sm:h-[62vh] max-h-[640px] bg-[#0A1B13] flex items-center justify-center overflow-hidden">
           {item.src ? (
-            <img
-              src={item.src}
-              alt={item.alt}
-              width={1000}
-              height={625}
-              loading="lazy"
-              decoding="async"
-              referrerPolicy="no-referrer"
-              className="w-full h-full object-cover rounded-lg"
-            />
+            <>
+              {/* Ambient blurred backdrop */}
+              <img
+                src={item.src}
+                aria-hidden="true"
+                alt=""
+                className="absolute inset-0 w-full h-full object-cover blur-2xl opacity-30 scale-125 select-none pointer-events-none"
+              />
+              <div className="absolute inset-0 bg-[#07130D]/50 pointer-events-none" />
+
+              {/* Crisp uncropped image */}
+              <img
+                src={item.src}
+                alt={item.alt || item.title}
+                loading="lazy"
+                decoding="async"
+                referrerPolicy="no-referrer"
+                className="relative z-10 max-w-full max-h-full w-auto h-auto object-contain rounded-lg shadow-2xl p-2 sm:p-4 select-none"
+              />
+            </>
           ) : (
             <div className="text-center max-w-md px-4 relative z-10">
               <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-white/10 text-[#E5D2B4] flex items-center justify-center border border-white/15 shadow-inner">
@@ -130,19 +140,22 @@ export const GalleryLightbox: React.FC<GalleryLightboxProps> = ({
         </div>
 
         {/* Captions and Details Bar */}
-        <div className="bg-[#122A1F] p-5 sm:p-6 border-t border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-          <div>
+        <div className="bg-[#10251C] p-4 sm:p-5 border-t border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+          <div className="min-w-0">
             <div className="flex items-center gap-2 text-xs text-[#9BBBA6] mb-1">
-              <span>{item.category}</span>
+              <span className="font-semibold text-[#D4B07B] uppercase tracking-wider">{item.category}</span>
               <span aria-hidden="true">·</span>
               <span>Image {currentIndex + 1} of {items.length}</span>
             </div>
-            <p className="text-sm sm:text-base text-[#F4ECE0] font-normal">
+            <h3 className="text-base sm:text-lg font-serif font-bold text-white mb-0.5">
+              {item.title}
+            </h3>
+            <p className="text-xs sm:text-sm text-[#E2D9CC] font-normal leading-relaxed">
               {item.caption}
             </p>
           </div>
 
-          <div className="text-xs text-[#7A9984] shrink-0">
+          <div className="text-xs text-[#7A9984] shrink-0 font-medium hidden sm:block">
             Dr. B. Bhattacharyya Clinic
           </div>
         </div>
