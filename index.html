@@ -19,20 +19,27 @@
     />
     <meta name="keywords" content="Dr. B. Bhattacharyya Clinic, homeopathic doctors Patna, Dr. B. Bhattacharyya Clinic Patna, homeopathy treatment in Patna, homeopathic clinic near me, homeopathy clinic in Patna, classical homeopathy Patna, Dr. B. Bhattacharya Clinic" />
     <meta name="theme-color" content="#163829" />
-    <link rel="canonical" href="https://Enter_your_domain/" />
+    <link rel="canonical" href="https://bhattacharyaclinic.vercel.app/" />
     <link rel="icon" type="image/jpeg" href="/logo.jpeg" />
+
+    <!-- Local SEO Geo Meta Tags -->
+    <meta name="geo.region" content="IN-BR" />
+    <meta name="geo.placename" content="Patna" />
+    <meta name="geo.position" content="25.616377;85.063619" />
+    <meta name="ICBM" content="25.616377, 85.063619" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_IN" />
     <meta property="og:site_name" content="Dr. B. Bhattacharyya Clinic Patna" />
-    <meta property="og:url" content="https://Enter_your_domain/" />
+    <meta property="og:url" content="https://bhattacharyaclinic.vercel.app/" />
     <meta property="og:title" content="Dr. B. Bhattacharyya Clinic | Homeopathic Clinic in Patna" />
     <meta
       property="og:description"
-      content="Discover personalised classical homeopathic care at Dr. B. Bhattacharyya Clinic in Patna. Consult experienced doctors for individualised constitutional care."
+      content="Discover personalised classical homeopathic care at Dr. B. Bhattacharyya Clinic in Patna. In-clinic consultations in East Patel Nagar & online doctor consults with pan-India medicine parcels."
     />
-    <meta property="og:image" content="https://Enter_your_domain/og-image.jpeg" />
-    <meta property="og:image:secure_url" content="https://Enter_your_domain/og-image.jpeg" />
+    <meta property="og:image" content="https://bhattacharyaclinic.vercel.app/og-image.jpeg" />
+    <meta property="og:image:secure_url" content="https://bhattacharyaclinic.vercel.app/og-image.jpeg" />
     <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -40,13 +47,13 @@
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="https://Enter_your_domain/" />
+    <meta name="twitter:url" content="https://bhattacharyaclinic.vercel.app/" />
     <meta name="twitter:title" content="Dr. B. Bhattacharyya Clinic | Homeopathic Clinic in Patna" />
     <meta
       name="twitter:description"
-      content="Discover personalised classical homeopathic care at Dr. B. Bhattacharyya Clinic in Patna. Consult experienced doctors for individualised constitutional care."
+      content="Discover personalised classical homeopathic care at Dr. B. Bhattacharyya Clinic in Patna. In-clinic consultations in East Patel Nagar & online doctor consults with pan-India medicine parcels."
     />
-    <meta name="twitter:image" content="https://Enter_your_domain/og-image.jpeg" />
+    <meta name="twitter:image" content="https://bhattacharyaclinic.vercel.app/og-image.jpeg" />
     <meta name="twitter:image:alt" content="Dr. B. Bhattacharyya Clinic - Homeopathic Care in Patna" />
 
     <!-- Preload Critical LCP Hero Image -->
@@ -61,30 +68,158 @@
       rel="stylesheet"
     />
 
-    <!-- Schema.org JSON-LD Structured Data -->
+    <!-- Schema.org JSON-LD Structured Data: MedicalClinic + WebSite + FAQPage -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "MedicalClinic",
-      "name": "Dr. B. Bhattacharyya Clinic - Homeopathic Clinic in Patna",
-      "alternateName": ["Dr. B. Bhattacharyya Clinic", "Dr. B. Bhattacharyya Clinic Patna", "Bhattacharyya Clinic", "Dr. B. Bhattacharyya Homeopathic Clinic", "Dr. B Bhattacharya Clinic Patna"],
-      "url": "https://Enter_your_domain/",
-      "image": "https://Enter_your_domain/og-image.jpeg",
-      "logo": "https://Enter_your_domain/logo.jpeg",
-      "medicalSpecialty": "Homeopathic",
-      "description": "Discover personalised homeopathic care at DR. B. BHATTACHARYYA Clinic in Patna. Learn about the clinic, treatments, consultation and appointment options.",
-      "telephone": "+91 9934298080",
-      "email": "drbbhattacharya990@gmail.com",
-      "openingHours": "Mo-Sa 09:00-20:00",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "724, East Patel Nagar, Adarsh Colony, North Shastri Nagar",
-        "addressLocality": "Patna",
-        "addressRegion": "Bihar",
-        "postalCode": "801103",
-        "addressCountry": "IN"
-      },
-      "priceRange": "₹₹"
+      "@graph": [
+        {
+          "@type": "MedicalClinic",
+          "@id": "https://bhattacharyaclinic.vercel.app/#clinic",
+          "name": "Dr. B. Bhattacharyya Clinic",
+          "alternateName": [
+            "Dr. B. Bhattacharyya Clinic Patna",
+            "Bhattacharyya Clinic",
+            "Dr. B. Bhattacharyya Homeopathic Clinic",
+            "Dr. B Bhattacharya Clinic Patna"
+          ],
+          "url": "https://bhattacharyaclinic.vercel.app/",
+          "logo": {
+            "@type": "ImageObject",
+            "@id": "https://bhattacharyaclinic.vercel.app/#logo",
+            "url": "https://bhattacharyaclinic.vercel.app/logo.jpeg",
+            "caption": "Dr. B. Bhattacharyya Clinic Logo",
+            "width": 512,
+            "height": 512
+          },
+          "image": [
+            "https://bhattacharyaclinic.vercel.app/og-image.jpeg",
+            "https://bhattacharyaclinic.vercel.app/doctor.jpeg"
+          ],
+          "medicalSpecialty": "https://schema.org/Homeopathic",
+          "description": "Discover personalised classical homeopathic care at Dr. B. Bhattacharyya Clinic in Patna. In-clinic consultations in East Patel Nagar, Patna, and remote online doctor consultations with medicine parcels dispatched across India.",
+          "telephone": "+91 7050086029",
+          "contactPoint": [
+            {
+              "@type": "ContactPoint",
+              "telephone": "+91 7050086029",
+              "contactType": "customer service",
+              "areaServed": "IN",
+              "availableLanguage": ["English", "Hindi"]
+            },
+            {
+              "@type": "ContactPoint",
+              "telephone": "+91 9934298080",
+              "contactType": "appointments",
+              "areaServed": "IN",
+              "availableLanguage": ["English", "Hindi"]
+            }
+          ],
+          "email": "drbbhattacharya990@gmail.com",
+          "priceRange": "₹₹",
+          "currenciesAccepted": "INR",
+          "paymentAccepted": "Cash, UPI, Digital Payments",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "724, East Patel Nagar, Adarsh Colony, North Shastri Nagar",
+            "addressLocality": "Patna",
+            "addressRegion": "Bihar",
+            "postalCode": "801103",
+            "addressCountry": "IN"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 25.616377,
+            "longitude": 85.063619
+          },
+          "hasMap": "https://maps.app.goo.gl/ngNTeUMADhmzJViu8",
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+              "opens": "09:00",
+              "closes": "20:00"
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": "Sunday",
+              "opens": "09:00",
+              "closes": "13:00",
+              "description": "Medicine dispensary open"
+            }
+          ],
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "reviewCount": "120",
+            "bestRating": "5",
+            "worstRating": "1"
+          },
+          "sameAs": [
+            "https://maps.app.goo.gl/ngNTeUMADhmzJViu8",
+            "https://www.facebook.com/b.bhattacharya.clinic/",
+            "https://instagram.com/bhattacharyaclinic",
+            "https://youtube.com/@bhattacharyaclinic"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://bhattacharyaclinic.vercel.app/#website",
+          "url": "https://bhattacharyaclinic.vercel.app/",
+          "name": "Dr. B. Bhattacharyya Clinic Patna",
+          "description": "Personalised classical homeopathic care and consultations in Patna, Bihar.",
+          "publisher": {
+            "@id": "https://bhattacharyaclinic.vercel.app/#clinic"
+          },
+          "inLanguage": "en-IN"
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://bhattacharyaclinic.vercel.app/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Where is Dr. B. Bhattacharyya Clinic located in Patna?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Dr. B. Bhattacharyya Clinic is located at 724, East Patel Nagar (near Adarsh Colony & North Shastri Nagar), Patna, Bihar 801103. The clinic is centrally situated and accessible from Bailey Road, Rajbansi Nagar, and Ashiana Nagar. Remote online consultations and pan-India medicine parcels are also available."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How can I book a consultation with the doctors at Dr. B. Bhattacharyya Clinic?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "You can book an appointment by phone at +91 7050086029, WhatsApp at +91 9934298080, or via the online appointment request form. In-clinic and online phone/video consultations are available. Scheduling 24 hours in advance is recommended."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What can I expect during my first homeopathic consultation?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Your initial consultation is an unhurried, comprehensive conversation lasting 45 to 60 minutes. The consulting doctor evaluates your physical symptoms, health history, emotional stressors, lifestyle, and sensitivities to determine your personalised constitutional remedy."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do you offer online doctor consultations and deliver medicines by parcel?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. For patients who reside outside Patna or in other states across India, doctors at Dr. B. Bhattacharyya Clinic provide online consultations via phone or video call. Following evaluation, genuine homeopathic medicines are hygienically packed and parcelled directly to your doorstep across India."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What conditions are evaluated at Dr. B. Bhattacharyya Clinic?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We evaluate respiratory issues (asthma, sinusitis, allergies), digestive disorders (gas, liver sluggishness, piles, fissures), skin diseases (psoriasis, eczema, vitiligo, hair fall), joint pain (arthritis, sciatica, spondylosis), kidney stones, migraines, PCOD, and pediatric illnesses."
+              }
+            }
+          ]
+        }
+      ]
     }
     </script>
   </head>
