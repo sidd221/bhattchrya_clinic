@@ -173,7 +173,7 @@ export const Gallery: React.FC = React.memo(() => {
   return (
     <section id="gallery" className="py-16 sm:py-20 lg:py-28 bg-[#FAF8F5] relative overflow-hidden">
       {/* Subtle organic background ambient glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-[#E8EFE9]/40 rounded-full blur-3xl pointer-events-none -z-10" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[700px] h-[500px] bg-[#E8EFE9]/40 rounded-full blur-3xl pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}

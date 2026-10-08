@@ -159,7 +159,7 @@ export const Navbar: React.FC<NavbarProps> = React.memo(({ onOpenBooking: _onOpe
               />
             </picture>
             <div className="flex flex-col items-start min-w-0">
-              <span className="text-base sm:text-lg lg:text-[16px] xl:text-lg font-serif font-bold tracking-tight text-[#153A2A] group-hover:text-[#0E271C] transition-colors truncate max-w-[210px] sm:max-w-none">
+              <span className="text-sm sm:text-lg lg:text-[16px] xl:text-lg font-serif font-bold tracking-tight text-[#153A2A] group-hover:text-[#0E271C] transition-colors truncate max-w-[160px] xs:max-w-[210px] sm:max-w-none">
                 {clinic.name}
               </span>
               <span className="text-[10px] sm:text-[11px] text-[#697E74] font-medium tracking-wide">
@@ -207,20 +207,22 @@ export const Navbar: React.FC<NavbarProps> = React.memo(({ onOpenBooking: _onOpe
           </nav>
 
           {/* Zone 3: CTA Button & Mobile / Tablet menu toggle */}
-          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+          <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
             <a
               href={`tel:${clinic.phoneRaw}`}
-              className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-sm font-medium text-white bg-[#153A2A] hover:bg-[#0E271C] active:bg-[#081811] rounded-lg transition-colors shadow-xs whitespace-nowrap cursor-pointer"
+              aria-label="Call clinic to book appointment"
+              className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-4 py-1.5 sm:py-2.5 text-xs sm:text-sm font-medium text-white bg-[#153A2A] hover:bg-[#0E271C] active:bg-[#081811] rounded-lg transition-colors shadow-xs whitespace-nowrap cursor-pointer"
             >
               <PhoneCall className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#D8E6DD]" aria-hidden="true" />
-              <span>Book Appointment</span>
+              <span className="hidden sm:inline">Book Appointment</span>
+              <span className="sm:hidden font-semibold">Call</span>
             </a>
 
             {/* Mobile / Tablet menu toggle */}
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2 text-[#153A2A] hover:bg-[#EAE4D7] rounded-lg transition-colors cursor-pointer"
+              className="lg:hidden p-1.5 sm:p-2 text-[#153A2A] hover:bg-[#EAE4D7] rounded-lg transition-colors cursor-pointer"
               aria-expanded={mobileMenuOpen}
               aria-label="Toggle Navigation Menu"
             >

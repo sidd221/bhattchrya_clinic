@@ -34,7 +34,7 @@ export const About: React.FC<AboutProps> = React.memo(({ onLearnMore }) => {
           {/* Left Column: Visual Composition representing the Clinic Interior & Philosophy */}
           <div className="lg:col-span-6 relative">
             <ScrollReveal direction="left" distance={30} duration={800}>
-              <div className="relative rounded-2xl overflow-hidden shadow-lg border border-[#E7E0D3] bg-gradient-to-br from-[#F5F1E8] to-[#EAE3D5] p-8 sm:p-10">
+              <div className="relative rounded-2xl overflow-hidden shadow-lg border border-[#E7E0D3] bg-gradient-to-br from-[#F5F1E8] to-[#EAE3D5] p-5 sm:p-10">
                 {/* Botanical watermark */}
                 <div className="absolute -top-12 -right-12 w-48 h-48 bg-[#D2E4D6]/40 rounded-full blur-2xl" />
 

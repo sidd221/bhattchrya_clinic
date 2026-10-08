@@ -70,15 +70,16 @@ export const ScrollReveal: React.FC<ScrollRevealProps> = React.memo(({
 
   const getTransform = () => {
     if (isVisible) return 'translate3d(0, 0, 0)';
+    const isMobile = typeof window !== 'undefined' && window.innerWidth < 640;
     switch (direction) {
       case 'up':
         return `translate3d(0, ${distance}px, 0)`;
       case 'down':
         return `translate3d(0, -${distance}px, 0)`;
       case 'left':
-        return `translate3d(${distance}px, 0, 0)`;
+        return isMobile ? `translate3d(0, ${Math.min(distance, 20)}px, 0)` : `translate3d(${distance}px, 0, 0)`;
       case 'right':
-        return `translate3d(-${distance}px, 0, 0)`;
+        return isMobile ? `translate3d(0, ${Math.min(distance, 20)}px, 0)` : `translate3d(-${distance}px, 0, 0)`;
       case 'none':
       default:
         return 'scale(0.97)';

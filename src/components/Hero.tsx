@@ -75,7 +75,7 @@ export const Hero: React.FC<HeroProps> = React.memo(({ onOpenBooking, onExploreT
             </div>
 
             {/* Editorial Headline */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-[#153A2A] leading-[1.15] tracking-tight mb-6 text-balance">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-serif font-bold text-[#153A2A] leading-[1.2] tracking-tight mb-5 sm:mb-6 text-balance">
               <ShinyText
                 text="A Journey Towards"
                 color="#153A2A"
@@ -84,7 +84,7 @@ export const Hero: React.FC<HeroProps> = React.memo(({ onOpenBooking, onExploreT
                 spread={120}
                 direction="left"
               />{' '}
-              <span className="italic font-normal text-[#255740] inline-block">
+              <span className="italic font-normal text-[#255740]">
                 <ShinyText
                   text="Balance, Wellness & You."
                   color="#255740"
@@ -98,15 +98,15 @@ export const Hero: React.FC<HeroProps> = React.memo(({ onOpenBooking, onExploreT
             </h1>
 
             {/* Supporting Prose */}
-            <p className="text-lg sm:text-xl text-[#4A5952] font-normal leading-relaxed max-w-2xl mb-8">
+            <p className="text-base sm:text-lg lg:text-xl text-[#4A5952] font-normal leading-relaxed max-w-2xl mb-6 sm:mb-8">
               Dr. B. Bhattacharyya Clinic provides personalised homeopathic consultation and care in Patna, with experienced consulting doctors dedicated to understanding individual health concerns. Online consultations are also available for patients at a distance, with prescribed medicines carefully parcelled directly to your doorstep.
             </p>
 
             {/* Action CTAs */}
-            <div className="flex flex-wrap items-center gap-4 mb-4">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 mb-4">
               <a
                 href={`tel:${clinic.phoneRaw}`}
-                className="inline-flex items-center gap-2.5 px-6 py-3.5 text-base font-medium text-white bg-[#153A2A] hover:bg-[#0E271C] active:bg-[#081811] rounded-lg transition-all shadow-xs hover:shadow-md cursor-pointer group hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 text-base font-medium text-white bg-[#153A2A] hover:bg-[#0E271C] active:bg-[#081811] rounded-lg transition-all shadow-xs hover:shadow-md cursor-pointer group hover:-translate-y-0.5"
               >
                 <PhoneCall className="w-5 h-5 text-[#D8E6DD]" aria-hidden="true" />
                 <span>Book an Appointment</span>
@@ -116,25 +116,25 @@ export const Hero: React.FC<HeroProps> = React.memo(({ onOpenBooking, onExploreT
               <button
                 type="button"
                 onClick={onExploreTreatments}
-                className="inline-flex items-center gap-2 px-5 py-3.5 text-base font-medium text-[#1E3B2D] hover:text-[#0D2118] bg-[#EAE3D6]/70 hover:bg-[#E2DACB] rounded-lg transition-colors cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 px-5 py-3.5 text-base font-medium text-[#1E3B2D] hover:text-[#0D2118] bg-[#EAE3D6]/70 hover:bg-[#E2DACB] rounded-lg transition-colors cursor-pointer"
               >
                 <span>Explore Treatments</span>
               </button>
             </div>
 
             {/* Local Availability Prompt */}
-            <p className="text-xs text-[#5D6F66] mb-8 flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#2C694D] shrink-0" aria-hidden="true" />
+            <p className="text-xs text-[#5D6F66] mb-6 sm:mb-8 flex items-start sm:items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#2C694D] shrink-0 mt-1 sm:mt-0" aria-hidden="true" />
               <span>In-clinic consultations in Patna &amp; remote online consultations with pan-India medicine parcel delivery.</span>
             </p>
 
             {/* Unboxed Trust Signals */}
-            <div className="pt-6 border-t border-[#E3DBD0] flex flex-wrap lg:flex-nowrap items-center gap-x-2.5 sm:gap-x-3.5 gap-y-2 text-xs lg:text-[13px] tracking-tight text-[#54645D]">
-              <span className="font-semibold text-[#153A2A] whitespace-nowrap">In-Clinic &amp; Online Consults</span>
-              <span className="text-[#5F7A6C] font-normal select-none" aria-hidden="true">|</span>
-              <span className="font-medium text-[#1B3026] whitespace-nowrap">Doorstep Medicine Parcels</span>
-              <span className="text-[#5F7A6C] font-normal select-none" aria-hidden="true">|</span>
-              <span className="font-medium text-[#1B3026] whitespace-nowrap">Personalised Constitutional Care</span>
+            <div className="pt-5 sm:pt-6 border-t border-[#E3DBD0] flex flex-wrap items-center gap-x-2 sm:gap-x-3.5 gap-y-2 text-xs lg:text-[13px] tracking-tight text-[#54645D]">
+              <span className="font-semibold text-[#153A2A]">In-Clinic &amp; Online Consults</span>
+              <span className="text-[#5F7A6C] font-normal select-none hidden sm:inline" aria-hidden="true">•</span>
+              <span className="font-medium text-[#1B3026]">Doorstep Medicine Parcels</span>
+              <span className="text-[#5F7A6C] font-normal select-none hidden sm:inline" aria-hidden="true">•</span>
+              <span className="font-medium text-[#1B3026]">Personalised Constitutional Care</span>
             </div>
           </div>
 

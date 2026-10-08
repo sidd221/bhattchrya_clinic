@@ -8,13 +8,14 @@
 }
 
 .shiny-text {
-  display: inline-block;
+  display: inline;
   background-size: 200% auto;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: shiny-text-shimmer var(--shiny-speed, 2.5s) linear infinite;
   animation-delay: var(--shiny-delay, 0s);
+  word-break: break-word;
 }
 
 .shiny-text.paused {

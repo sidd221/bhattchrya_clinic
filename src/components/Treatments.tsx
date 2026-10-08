@@ -239,7 +239,7 @@ export const Treatments: React.FC<TreatmentsProps> = React.memo(({ onBookConsult
         {/* DON'T SEE YOUR DISEASE / DIRECT CONSULTATION CALLOUT BANNER   */}
         {/* ============================================================== */}
         <ScrollReveal direction="up" distance={25} delay={150}>
-          <div className="mt-12 lg:mt-16 rounded-2xl bg-gradient-to-br from-[#123123] via-[#163B2B] to-[#1C4633] text-white p-7 sm:p-9 lg:p-10 shadow-xl border border-[#2B543F] relative overflow-hidden">
+          <div className="mt-12 lg:mt-16 rounded-2xl bg-gradient-to-br from-[#123123] via-[#163B2B] to-[#1C4633] text-white p-5 sm:p-9 lg:p-10 shadow-xl border border-[#2B543F] relative overflow-hidden">
             {/* Subtle decorative background glow */}
             <div className="absolute top-0 right-0 -mt-12 -mr-12 w-64 h-64 rounded-full bg-white/5 blur-2xl pointer-events-none" />
             <div className="absolute bottom-0 left-1/4 -mb-10 w-48 h-48 rounded-full bg-[#B88E57]/10 blur-xl pointer-events-none" />
