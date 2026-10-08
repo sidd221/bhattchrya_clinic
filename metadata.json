@@ -1,0 +1,6 @@
+{
+  "name": "Bhattachatys Clinic",
+  "description": "Discover personalised classical homeopathic care at Dr. B. Bhattacharyya Clinic in Patna. Consult experienced doctors for individualised constitutional care.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

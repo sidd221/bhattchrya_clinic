@@ -1,0 +1,29 @@
+@keyframes shiny-text-shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.shiny-text {
+  display: inline-block;
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shiny-text-shimmer var(--shiny-speed, 2.5s) linear infinite;
+  animation-delay: var(--shiny-delay, 0s);
+}
+
+.shiny-text.paused {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shiny-text {
+    animation: none !important;
+    background-position: 50% 0 !important;
+  }
+}

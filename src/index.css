@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+
+  --color-clinic-primary: #153A2A;
+  --color-clinic-primary-dark: #0E271C;
+  --color-clinic-primary-light: #20533D;
+  --color-clinic-sage: #DCE7DF;
+  --color-clinic-sage-light: #F0F5F1;
+  --color-clinic-sage-border: #C8DACE;
+  --color-clinic-cream: #F8F5EE;
+  --color-clinic-cream-dark: #ECE8DD;
+  --color-clinic-gold: #B88E57;
+  --color-clinic-gold-light: #DFCAAB;
+  --color-clinic-text: #1C2621;
+  --color-clinic-muted: #56655F;
+}
+
+html {
+  font-family: var(--font-sans);
+  color: #1C2621;
+  background-color: #FAF8F5;
+  -webkit-tap-highlight-color: transparent;
+}
+
+h1, h2, h3, .font-serif {
+  font-family: var(--font-serif);
+}
+
+/* Content visibility optimization: browser skips rendering off-screen DOM until scrolled near */
+.section-deferred {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 800px;
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F3EFE8;
+}
+::-webkit-scrollbar-thumb {
+  background: #C4D3C7;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #99B2A0;
+}
+
+/* Accessibility: respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Fan Carousel responsive card styling */
+.fan-layout {
+  height: 18rem;
+}
+@media (min-width: 480px) {
+  .fan-layout {
+    height: 21rem;
+  }
+}
+@media (min-width: 640px) {
+  .fan-layout {
+    height: 24rem;
+  }
+}
+@media (min-width: 768px) {
+  .fan-layout {
+    height: 27rem;
+  }
+}
+@media (min-width: 1024px) {
+  .fan-layout {
+    height: 33rem;
+  }
+}
+
+.fan-card {
+  position: absolute;
+  width: 11rem;
+  height: 15.5rem;
+  transform-origin: center bottom;
+  user-select: none;
+  max-width: 82vw;
+}
+@media (min-width: 480px) {
+  .fan-card {
+    width: 13.5rem;
+    height: 18.5rem;
+  }
+}
+@media (min-width: 640px) {
+  .fan-card {
+    width: 15.5rem;
+    height: 21.5rem;
+  }
+}
+@media (min-width: 768px) {
+  .fan-card {
+    width: 17.5rem;
+    height: 23.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .fan-card {
+    width: 20rem;
+    height: 28rem;
+  }
+}
+
