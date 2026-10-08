@@ -90,6 +90,22 @@ const CLINIC_FAN_CARDS: (CardItem & { id: string; caption: string })[] = [
     title: "Constitutional Intake Desk",
     category: "Consultation Area",
     caption: "Holistic assessment connecting physiological reports with constitutional health profile."
+  },
+  {
+    id: "gal-11",
+    imgUrl: "/gallery/gallery-11.jpg",
+    alt: "Herbal & Mother Tincture Archive",
+    title: "Herbal & Mother Tincture Archive",
+    category: "Treatment Environment",
+    caption: "Dedicated storage of potentised dilutions and organic mother tinctures preserved in controlled conditions."
+  },
+  {
+    id: "gal-12",
+    imgUrl: "/gallery/gallery-12.jpg",
+    alt: "Patient Wellness Sanctuary",
+    title: "Patient Wellness Sanctuary",
+    category: "Patient Experience",
+    caption: "A serene recovery and dialogue space fostering calm and holistic healing for patients and families."
   }
 ];
 

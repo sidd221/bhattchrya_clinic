@@ -152,5 +152,31 @@ export const galleryData: GalleryItem[] = [
       accentColor: "#CDB083",
       motif: "books"
     }
+  },
+  {
+    id: "gal-11",
+    title: "Herbal & Mother Tincture Archive",
+    category: "Treatment Environment",
+    caption: "Dedicated storage of potentised dilutions and organic mother tinctures preserved in controlled conditions.",
+    alt: "Homeopathic tincture library and remedy preparation area",
+    src: "/gallery/gallery-11.jpg",
+    visualTheme: {
+      bgGradient: "from-[#1B382B] to-[#0E2219]",
+      accentColor: "#E2C99D",
+      motif: "botanical"
+    }
+  },
+  {
+    id: "gal-12",
+    title: "Patient Wellness Sanctuary",
+    category: "Patient Experience",
+    caption: "A serene recovery and dialogue space fostering calm and holistic healing for patients and families.",
+    alt: "Peaceful patient recovery and consultation lounge",
+    src: "/gallery/gallery-12.jpg",
+    visualTheme: {
+      bgGradient: "from-[#2A4D3B] to-[#1B3628]",
+      accentColor: "#A3C8B0",
+      motif: "lounge"
+    }
   }
 ];
