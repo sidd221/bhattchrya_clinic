@@ -18,6 +18,11 @@ export const VIDEO_ITEMS = [
     videoSrc: '/feedback-3.mp4',
     posterSrc: '/feedback-3-poster.jpg',
   },
+  {
+    id: 'feedback-4',
+    videoSrc: '/feedback-4.mp4',
+    posterSrc: '/feedback-4-poster.jpg',
+  },
 ];
 
 export const PatientVideoFeedback: React.FC = () => {
@@ -27,6 +32,7 @@ export const PatientVideoFeedback: React.FC = () => {
     'feedback-1': false,
     'feedback-2': false,
     'feedback-3': false,
+    'feedback-4': false,
   });
 
   const videoRefs = useRef<{ [key: string]: HTMLVideoElement | null }>({});
@@ -118,8 +124,8 @@ export const PatientVideoFeedback: React.FC = () => {
         </div>
       </ScrollReveal>
 
-      {/* 3 Pure Vertical Video Frames Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto px-4">
+      {/* 4 Pure Vertical Video Frames Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-6 max-w-7xl mx-auto px-4">
         {VIDEO_ITEMS.map((item) => {
           const isPlaying = activeId === item.id;
           const isMuted = mutedState[item.id] ?? false;

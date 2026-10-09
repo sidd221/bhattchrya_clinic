@@ -58,7 +58,7 @@ const iconMap: Record<string, React.ElementType> = {
 };
 
 const CATEGORIES = [
-  'All Conditions (20)',
+  'All Conditions',
   'Respiratory & ENT',
   'Digestive & Anorectal',
   'Skin & Scalp',
@@ -69,7 +69,7 @@ const CATEGORIES = [
 
 export const Treatments: React.FC<TreatmentsProps> = React.memo(({ onBookConsultation }) => {
   const [selectedTreatment, setSelectedTreatment] = useState<Treatment | null>(null);
-  const [activeCategory, setActiveCategory] = useState('All Conditions (20)');
+  const [activeCategory, setActiveCategory] = useState('All Conditions');
 
   const filteredTreatments = useMemo(() => {
     return treatmentsData.filter((item) => {
@@ -107,7 +107,7 @@ export const Treatments: React.FC<TreatmentsProps> = React.memo(({ onBookConsult
               Conditions We Treat
             </h2>
             <p className="text-base sm:text-lg text-[#4E5E57] font-normal leading-relaxed">
-              Explore the 20 primary acute and chronic conditions evaluated at our clinic. Consulting doctors at Dr. B. Bhattacharyya Clinic analyse your constitutional totality, providing individualised, side-effect-free homeopathic remedies for patients in Patna and across India.
+              Explore acute and chronic conditions evaluated and treated at our clinic. Consulting doctors at Dr. B. Bhattacharyya Clinic analyse your constitutional totality, providing individualised, side-effect-free homeopathic remedies for patients in Patna and across India.
             </p>
           </div>
         </ScrollReveal>
