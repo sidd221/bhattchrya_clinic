@@ -310,8 +310,10 @@ export default function SocialCards({
             const cardContent = (
               <div
                 className="relative w-full h-full overflow-hidden rounded-2xl shadow-xl border border-white/20 group/card bg-[#0A1B13] flex items-center justify-center cursor-pointer select-none"
-                onClick={() => onCardClick && onCardClick(index)}
-                title={card.title ? `${card.title} - Click to expand` : undefined}
+                onClick={() => {
+                  if (onCardClick) onCardClick(index);
+                  else goToCard(index);
+                }}
               >
                 {/* Ambient blurred backdrop that matches image colors */}
                 <img
@@ -377,14 +379,14 @@ export default function SocialCards({
                   <button
                     key={i}
                     onClick={() => goToCard(i)}
-                    aria-label={`Go to slide ${i + 1}: ${card.title || 'Image'}`}
+                    aria-label={`Slide ${i + 1}`}
                     aria-current={isActive ? "true" : undefined}
                     className={`transition-all duration-300 rounded-full cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#153A2A] ${
                       isActive
                         ? "w-5 sm:w-7 h-2 sm:h-2.5 bg-[#153A2A] shadow-sm"
                         : "w-2 sm:w-2.5 h-2 sm:h-2.5 bg-[#8C9B93] hover:bg-[#153A2A]/70"
                     }`}
-                    title={card.title || `Slide ${i + 1}`}
+                    title={`Slide ${i + 1}`}
                   />
                 );
               })}

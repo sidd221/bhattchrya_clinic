@@ -1,50 +1,20 @@
-import React, { useState, useEffect, useRef, useCallback, lazy, Suspense } from 'react';
-import { galleryData, GalleryItem } from '../data/gallery';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { galleryData } from '../data/gallery';
 import SocialCards, { CardItem } from './ui/card-fan-carousel';
 import { ScrollReveal } from './ScrollReveal';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { PatientVideoFeedback } from './PatientVideoFeedback';
 
-const GalleryLightbox = lazy(() =>
-  import('./GalleryLightbox').then((m) => ({ default: m.GalleryLightbox }))
-);
-
 // Authentic clinical, memorial, and treatment images for Dr. B. Bhattacharyya Clinic (12 images)
-const CLINIC_FAN_CARDS: (CardItem & { id: string; caption: string })[] = galleryData.map((item) => ({
-  id: item.id,
+const CLINIC_FAN_CARDS: CardItem[] = galleryData.map((item) => ({
   imgUrl: item.src,
   alt: item.alt,
-  title: item.title,
-  category: item.category,
-  caption: item.caption,
 }));
 
-const LIGHTBOX_ITEMS: GalleryItem[] = galleryData;
-
 export const Gallery: React.FC = React.memo(() => {
-  const [activeItem, setActiveItem] = useState<GalleryItem | null>(null);
   const [mobileIndex, setMobileIndex] = useState(0);
   const [isMobilePaused, setIsMobilePaused] = useState(false);
   const touchStartX = useRef<number | null>(null);
-
-  const handleCardClick = useCallback((index: number) => {
-    const card = CLINIC_FAN_CARDS[index];
-    if (card) {
-      setActiveItem({
-        id: card.id,
-        title: card.title || "Clinic Space",
-        category: (card.category as any) || "Clinic",
-        caption: card.caption,
-        alt: card.alt || "Clinic Image",
-        src: card.imgUrl,
-        visualTheme: {
-          bgGradient: "from-[#1F4232] to-[#122A1F]",
-          accentColor: "#D4B07B",
-          motif: "room"
-        }
-      });
-    }
-  }, []);
 
   // 5-second auto scroll for mobile view
   useEffect(() => {
@@ -81,7 +51,6 @@ export const Gallery: React.FC = React.memo(() => {
   };
 
   const currentMobileCard = CLINIC_FAN_CARDS[mobileIndex];
-  const lightboxItems = LIGHTBOX_ITEMS;
 
   return (
     <section id="gallery" className="py-16 sm:py-20 lg:py-28 bg-[#FAF8F5] relative overflow-hidden">
@@ -110,7 +79,7 @@ export const Gallery: React.FC = React.memo(() => {
           </div>
         </ScrollReveal>
 
-        {/* MOBILE VIEW: Dual-layer frame that fits every aspect ratio without cropping */}
+        {/* MOBILE VIEW: Dual-layer frame displaying pure image without popup */}
         <div 
           className="block md:hidden w-full max-w-md mx-auto"
           onTouchStart={handleTouchStart}
@@ -118,19 +87,9 @@ export const Gallery: React.FC = React.memo(() => {
           onMouseEnter={() => setIsMobilePaused(true)}
           onMouseLeave={() => setIsMobilePaused(false)}
         >
-          {/* Main Card */}
+          {/* Main Card (Pure image only, no click popup) */}
           <div 
-            className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden shadow-xl border border-[#D5CABC] bg-[#0A1B13] cursor-pointer group"
-            onClick={() => handleCardClick(mobileIndex)}
-            role="button"
-            tabIndex={0}
-            aria-label={`View ${currentMobileCard.title} in full screen`}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                handleCardClick(mobileIndex);
-              }
-            }}
+            className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden shadow-xl border border-[#D5CABC] bg-[#0A1B13] select-none"
           >
             {/* Ambient blurred backdrop so portrait and landscape both fill the card naturally */}
             <img
@@ -145,12 +104,12 @@ export const Gallery: React.FC = React.memo(() => {
             <div className="relative z-10 w-full h-full flex items-center justify-center p-2.5 sm:p-3">
               <img
                 src={currentMobileCard.imgUrl}
-                alt={currentMobileCard.alt || currentMobileCard.title || "Clinic gallery image"}
+                alt={currentMobileCard.alt || "Clinic gallery image"}
                 width={800}
                 height={800}
                 loading="lazy"
                 decoding="async"
-                className="max-w-full max-h-full w-auto h-auto object-contain rounded-xl drop-shadow-lg transition-transform duration-300 group-hover:scale-[1.02]"
+                className="max-w-full max-h-full w-auto h-auto object-contain rounded-xl drop-shadow-lg select-none"
               />
             </div>
           </div>
@@ -196,29 +155,16 @@ export const Gallery: React.FC = React.memo(() => {
           </div>
         </div>
 
-        {/* DESKTOP / TABLET VIEW: Interactive 3D Card Fan Carousel */}
+        {/* DESKTOP / TABLET VIEW: Interactive 3D Card Fan Carousel (Pure image only, no click popup) */}
         <div className="hidden md:block w-full overflow-visible">
           <SocialCards
             cards={CLINIC_FAN_CARDS}
-            onCardClick={handleCardClick}
           />
         </div>
 
         {/* Real Patient Video Feedback Section */}
         <PatientVideoFeedback />
       </div>
-
-      {/* Lightbox Modal */}
-      {activeItem && (
-        <Suspense fallback={null}>
-          <GalleryLightbox
-            item={activeItem}
-            items={lightboxItems}
-            onClose={() => setActiveItem(null)}
-            onNavigate={(newItem) => setActiveItem(newItem)}
-          />
-        </Suspense>
-      )}
     </section>
   );
 });
