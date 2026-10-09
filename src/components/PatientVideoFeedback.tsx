@@ -1,5 +1,6 @@
 import React, { useState, useRef, useCallback } from 'react';
 import { Play, Volume2, VolumeX } from 'lucide-react';
+import { ScrollReveal } from './ScrollReveal';
 
 export const VIDEO_ITEMS = [
   {
@@ -95,8 +96,29 @@ export const PatientVideoFeedback: React.FC = () => {
   };
 
   return (
-    <div id="patient-videos" className="mt-12 sm:mt-16 pt-10 sm:pt-14 border-t border-[#E8E1D5]/80">
-      {/* 3 Pure Vertical Video Frames Grid (Zero Text) */}
+    <div id="patient-videos" className="mt-14 sm:mt-20 pt-10 sm:pt-14 border-t border-[#E8E1D5]/80">
+      {/* Heading Just Above Videos */}
+      <ScrollReveal direction="up" distance={20}>
+        <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-12 px-4">
+          <div className="inline-flex items-center gap-2 mb-3">
+            <span className="w-5 h-px bg-[#153A2A]" aria-hidden="true" />
+            <span className="text-xs font-semibold tracking-wider text-[#153A2A] uppercase">
+              Real Experiences
+            </span>
+            <span className="w-5 h-px bg-[#153A2A]" aria-hidden="true" />
+          </div>
+
+          <h3 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-[#153A2A] tracking-tight mb-3">
+            What Our Patients Say
+          </h3>
+
+          <p className="text-sm sm:text-base text-[#4E5E57] leading-relaxed">
+            Watch genuine feedback and recovery journeys shared by patients treated at Dr. B. Bhattacharyya Clinic.
+          </p>
+        </div>
+      </ScrollReveal>
+
+      {/* 3 Pure Vertical Video Frames Grid */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto px-4">
         {VIDEO_ITEMS.map((item) => {
           const isPlaying = activeId === item.id;
