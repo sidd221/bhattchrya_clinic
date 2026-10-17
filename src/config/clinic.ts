@@ -74,7 +74,7 @@ export const clinic: ClinicConfig = {
   mapsDirectionsUrl: "https://maps.app.goo.gl/ngNTeUMADhmzJViu8",
   googleBusinessProfileUrl: "https://maps.app.goo.gl/ngNTeUMADhmzJViu8",
   googleReviewUrl: "https://search.google.com/local/writereview?placeid=ChIJ01RBJf1X7TkR20tLn-cXnKI",
-  websiteUrl: "https://bhattacharyaclinic.vercel.app",
+  websiteUrl: "https://bhattacharyaclinic.com",
   socials: {
     instagram: "https://instagram.com/bhattacharyaclinic",
     facebook: "https://www.facebook.com/b.bhattacharya.clinic/",

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://bhattacharyaclinic.vercel.app/sitemap.xml
+Sitemap: https://bhattacharyaclinic.com/sitemap.xml
