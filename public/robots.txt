@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://bhattacharyaclinic.com/sitemap.xml
+Sitemap: https://bhattacharyyaclinic.com/sitemap.xml
