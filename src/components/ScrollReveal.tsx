@@ -27,13 +27,7 @@ export const ScrollReveal: React.FC<ScrollRevealProps> = React.memo(({
     const currentEl = domRef.current;
     if (!currentEl) return;
 
-    // Check if already in viewport on mount (e.g., above the fold)
-    const rect = currentEl.getBoundingClientRect();
-    if (rect.top < window.innerHeight && rect.bottom > 0) {
-      setIsVisible(true);
-      const timer = setTimeout(() => setIsDone(true), delay + duration + 50);
-      return () => clearTimeout(timer);
-    }
+    let timer: ReturnType<typeof setTimeout> | undefined;
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -41,14 +35,14 @@ export const ScrollReveal: React.FC<ScrollRevealProps> = React.memo(({
         if (entry.isIntersecting) {
           setIsVisible(true);
           observer.unobserve(currentEl);
-          setTimeout(() => {
+          timer = setTimeout(() => {
             setIsDone(true);
           }, delay + duration + 50);
         }
       },
       {
         threshold,
-        rootMargin: '50px 0px 0px 0px',
+        rootMargin: '60px 0px 40px 0px',
       }
     );
 
@@ -56,6 +50,7 @@ export const ScrollReveal: React.FC<ScrollRevealProps> = React.memo(({
 
     return () => {
       observer.unobserve(currentEl);
+      if (timer) clearTimeout(timer);
     };
   }, [threshold, delay, duration]);
 

@@ -131,13 +131,17 @@ export const Gallery: React.FC = React.memo(() => {
                   <button
                     key={i}
                     onClick={() => setMobileIndex(i)}
-                    className={`transition-all duration-300 rounded-full cursor-pointer ${
-                      i === mobileIndex
-                        ? "w-4 h-1.5 bg-[#153A2A]"
-                        : "w-1.5 h-1.5 bg-[#153A2A]/30 hover:bg-[#153A2A]/60"
-                    }`}
+                    className="p-1.5 sm:p-2 flex items-center justify-center cursor-pointer min-w-[28px] min-h-[36px] focus:outline-none"
                     aria-label={`Go to slide ${i + 1}`}
-                  />
+                  >
+                    <span
+                      className={`block transition-all duration-300 rounded-full ${
+                        i === mobileIndex
+                          ? "w-4 h-1.5 bg-[#153A2A]"
+                          : "w-1.5 h-1.5 bg-[#153A2A]/30 hover:bg-[#153A2A]/60"
+                      }`}
+                    />
+                  </button>
                 ))}
               </div>
               <span className="text-[11px] text-[#5C6E65] font-medium">

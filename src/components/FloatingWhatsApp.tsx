@@ -101,7 +101,7 @@ export const FloatingWhatsApp: React.FC = () => {
         <a
           href={`tel:${clinic.phoneRaw}`}
           aria-label="Call clinic directly"
-          className="flex-1 flex items-center justify-center gap-2 py-2.5 px-3 bg-[#FAF8F5] border border-[#CBD9CE] text-[#153A2A] rounded-lg text-xs font-bold hover:bg-[#F2ECE1] transition-colors"
+          className="flex-1 min-h-[48px] flex items-center justify-center gap-2 py-2.5 px-3 bg-[#FAF8F5] border border-[#CBD9CE] text-[#153A2A] rounded-lg text-xs font-bold hover:bg-[#F2ECE1] transition-colors"
         >
           <Phone className="w-4 h-4 text-[#153A2A]" aria-hidden="true" />
           <span>Call Clinic</span>
@@ -112,7 +112,7 @@ export const FloatingWhatsApp: React.FC = () => {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Chat on WhatsApp"
-          className="flex-1 flex items-center justify-center gap-2 py-2.5 px-3 bg-[#25D366] text-white rounded-lg text-xs font-bold hover:bg-[#20BA5A] transition-colors shadow-xs"
+          className="flex-1 min-h-[48px] flex items-center justify-center gap-2 py-2.5 px-3 bg-[#25D366] text-white rounded-lg text-xs font-bold hover:bg-[#20BA5A] transition-colors shadow-xs"
         >
           <WhatsAppIcon className="w-4 h-4 text-white" size={18} />
           <span>WhatsApp Us</span>

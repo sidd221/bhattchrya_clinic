@@ -381,13 +381,17 @@ export default function SocialCards({
                     onClick={() => goToCard(i)}
                     aria-label={`Slide ${i + 1}`}
                     aria-current={isActive ? "true" : undefined}
-                    className={`transition-all duration-300 rounded-full cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#153A2A] ${
-                      isActive
-                        ? "w-5 sm:w-7 h-2 sm:h-2.5 bg-[#153A2A] shadow-sm"
-                        : "w-2 sm:w-2.5 h-2 sm:h-2.5 bg-[#8C9B93] hover:bg-[#153A2A]/70"
-                    }`}
+                    className="p-1.5 flex items-center justify-center cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#153A2A] rounded-full"
                     title={`Slide ${i + 1}`}
-                  />
+                  >
+                    <span
+                      className={`block transition-all duration-300 rounded-full ${
+                        isActive
+                          ? "w-5 sm:w-7 h-2 sm:h-2.5 bg-[#153A2A] shadow-sm"
+                          : "w-2 sm:w-2.5 h-2 sm:h-2.5 bg-[#8C9B93] hover:bg-[#153A2A]/70"
+                      }`}
+                    />
+                  </button>
                 );
               })}
             </div>

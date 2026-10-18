@@ -183,9 +183,9 @@ export const Hero: React.FC<HeroProps> = React.memo(({ onOpenBooking, onExploreT
                       <div className="w-16 h-16 mx-auto mb-3.5 rounded-2xl bg-white/10 border-2 border-dashed border-[#8EBFA0]/60 flex items-center justify-center text-[#E3CCA9] shadow-inner group-hover:scale-105 transition-transform">
                         <ImageIcon className="w-8 h-8 text-[#E3CCA9]" aria-hidden="true" />
                       </div>
-                      <h3 className="font-serif text-xl sm:text-2xl text-[#FAF8F5] font-semibold mb-1.5">
+                      <p className="font-serif text-xl sm:text-2xl text-[#FAF8F5] font-semibold mb-1.5">
                         Space Reserved for Photo
-                      </h3>
+                      </p>
                       <p className="text-xs sm:text-sm text-[#B7D1C0] max-w-xs mx-auto mb-3 leading-relaxed">
                         Ready to display your photo here. Expected file name:
                       </p>

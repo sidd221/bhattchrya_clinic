@@ -132,9 +132,9 @@ export const Contact: React.FC<ContactProps> = React.memo(({ initialTreatment })
                   </div>
                   <div>
                     <div className="flex flex-wrap items-center gap-2 mb-1">
-                      <h4 className="text-xs font-bold text-[#183628] uppercase tracking-wider">
+                      <h3 className="text-xs font-bold text-[#183628] uppercase tracking-wider">
                         Online Consultation &amp; Medicine Parcel Service
-                      </h4>
+                      </h3>
                       <span className="text-[10px] font-semibold bg-[#E2ECE5] text-[#153A2A] px-2 py-0.5 rounded-md">
                         Pan-India Delivery
                       </span>

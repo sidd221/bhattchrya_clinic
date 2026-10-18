@@ -29,6 +29,7 @@ export const TrustStrip: React.FC = React.memo(() => {
   return (
     <section className="relative z-10 border-y border-[#E6E0D4] bg-[#F7F4EC]/80 py-8 lg:py-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="sr-only">Clinic Clinical Standards &amp; Principles</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {trustPoints.map((point, index) => {
             const Icon = point.icon;

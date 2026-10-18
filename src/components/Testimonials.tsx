@@ -129,9 +129,9 @@ export const Testimonials: React.FC = React.memo(() => {
         {/* Google Reviews Direct CTA Section */}
         <div className="mt-12 p-6 sm:p-8 bg-[#FAF8F5] border border-[#E4DCCE] rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left shadow-xs">
           <div>
-            <h4 className="font-serif text-lg font-bold text-[#153A2A] mb-1">
+            <h3 className="font-serif text-lg font-bold text-[#153A2A] mb-1">
               Have you consulted with the doctors at Dr. B. Bhattacharyya Clinic?
-            </h4>
+            </h3>
             <p className="text-sm text-[#596B62]">
               Your feedback helps other families find thoughtful, individualised homeopathic care.
             </p>

@@ -185,17 +185,18 @@ export const PatientVideoFeedback: React.FC = () => {
                 </button>
               )}
 
-              {/* Sleek Play Button Overlay (Zero text) */}
+              {/* Sleek Play Button Overlay */}
               {!isPlaying && (
-                <div
+                <button
+                  type="button"
                   onClick={() => handlePlayRequest(item.id)}
-                  className="absolute inset-0 z-20 flex items-center justify-center cursor-pointer select-none transition-opacity duration-300"
-                  aria-label="Play video"
+                  className="absolute inset-0 z-20 flex items-center justify-center cursor-pointer select-none transition-opacity duration-300 bg-transparent border-0 p-0"
+                  aria-label="Play patient feedback video"
                 >
                   <div className="w-16 h-16 sm:w-18 sm:h-18 rounded-full bg-[#D4B07B] text-[#0A1B13] flex items-center justify-center shadow-2xl transition-transform duration-300 group-hover:scale-110 active:scale-95">
                     <Play className="w-7 h-7 sm:w-8 sm:h-8 fill-current ml-1" />
                   </div>
-                </div>
+                </button>
               )}
             </div>
           );
