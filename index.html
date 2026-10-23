@@ -1,14 +1,37 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dr. B. Bhattacharyya Clinic | Homeopathic Clinic in Patna</title>
+    <meta
+      name="description"
+      content="Discover personalised classical homeopathic care at Dr. B. Bhattacharyya Clinic in Patna. Consult experienced doctors for individualised constitutional care."
+    />
+    <meta
+      name="keywords"
+      content="Dr. B. Bhattacharyya Clinic, homeopathic doctors Patna, Dr. B. Bhattacharyya Clinic Patna, homeopathy treatment in Patna, homeopathic clinic near me, homeopathy clinic in Patna, classical homeopathy Patna, Dr. B. Bhattacharya Clinic"
+    />
+    <meta name="theme-color" content="#163829" />
+    <link rel="canonical" href="https://bhattacharyyaclinic.com/" />
+
+    <!-- Favicon & Touch Icons for Google Search (SERP), Search Console & Browsers -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
     <!-- Google tag (gtag.js) - loaded on idle/interaction for optimal Core Web Vitals -->
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
+      function gtag() { dataLayer.push(arguments); }
       gtag('js', new Date());
       gtag('config', 'G-8LQ5QVBR2N');
 
-      (function() {
+      (function () {
         var loaded = false;
         function loadGtag() {
           if (loaded) return;
@@ -19,26 +42,15 @@
           document.head.appendChild(s);
         }
         if ('requestIdleCallback' in window) {
-          requestIdleCallback(function() { setTimeout(loadGtag, 2500); });
+          requestIdleCallback(function () { setTimeout(loadGtag, 2500); });
         } else {
-          window.addEventListener('load', function() { setTimeout(loadGtag, 2500); });
+          window.addEventListener('load', function () { setTimeout(loadGtag, 2500); });
         }
-        ['pointerdown', 'touchstart', 'scroll', 'keydown'].forEach(function(evt) {
+        ['pointerdown', 'touchstart', 'scroll', 'keydown'].forEach(function (evt) {
           window.addEventListener(evt, loadGtag, { once: true, passive: true });
         });
       })();
     </script>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dr. B. Bhattacharyya Clinic | Homeopathic Clinic in Patna</title>
-    <meta
-      name="description"
-      content="Discover personalised classical homeopathic care at Dr. B. Bhattacharyya Clinic in Patna. Consult experienced doctors for individualised constitutional care."
-    />
-    <meta name="keywords" content="Dr. B. Bhattacharyya Clinic, homeopathic doctors Patna, Dr. B. Bhattacharyya Clinic Patna, homeopathy treatment in Patna, homeopathic clinic near me, homeopathy clinic in Patna, classical homeopathy Patna, Dr. B. Bhattacharya Clinic" />
-    <meta name="theme-color" content="#163829" />
-    <link rel="canonical" href="https://bhattacharyyaclinic.com/" />
-    <link rel="icon" type="image/jpeg" href="/logo.jpeg" />
 
     <!-- Local SEO Geo Meta Tags -->
     <meta name="geo.region" content="IN-BR" />
@@ -78,26 +90,13 @@
     <link rel="preload" as="image" href="/doctor.webp" type="image/webp" fetchpriority="high" />
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
 
-    <!-- Google Fonts: Playfair Display & Plus Jakarta Sans (Non-render-blocking) -->
+    <!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      rel="preload"
-      as="style"
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
-    />
-    <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
-      media="print"
-      onload="this.media='all'"
     />
-    <noscript>
-      <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
-      />
-    </noscript>
 
     <!-- Schema.org JSON-LD Structured Data: MedicalClinic + WebSite + FAQPage -->
     <script type="application/ld+json">
@@ -105,7 +104,7 @@
       "@context": "https://schema.org",
       "@graph": [
         {
-          "@type": "MedicalClinic",
+          "@type": ["MedicalClinic", "Organization"],
           "@id": "https://bhattacharyyaclinic.com/#clinic",
           "name": "Dr. B. Bhattacharyya Clinic",
           "alternateName": [
@@ -118,12 +117,14 @@
           "logo": {
             "@type": "ImageObject",
             "@id": "https://bhattacharyyaclinic.com/#logo",
-            "url": "https://bhattacharyyaclinic.com/logo.jpeg",
+            "url": "https://bhattacharyyaclinic.com/logo.png",
+            "contentUrl": "https://bhattacharyyaclinic.com/logo.png",
             "caption": "Dr. B. Bhattacharyya Clinic Logo",
             "width": 512,
             "height": 512
           },
           "image": [
+            "https://bhattacharyyaclinic.com/logo.png",
             "https://bhattacharyyaclinic.com/og-image-v2.jpeg",
             "https://bhattacharyyaclinic.com/doctor.jpeg"
           ],
@@ -259,4 +260,3 @@
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
-

@@ -1,4 +1,4 @@
-import React, { useState, useMemo, lazy, Suspense } from 'react';
+import React, { useState, useMemo, useEffect, lazy, Suspense } from 'react';
 import { treatmentsData, Treatment } from '../data/treatments';
 import { clinic } from '../config/clinic';
 import { WhatsAppIcon } from './FloatingWhatsApp';
@@ -70,6 +70,42 @@ const CATEGORIES = [
 export const Treatments: React.FC<TreatmentsProps> = React.memo(({ onBookConsultation }) => {
   const [selectedTreatment, setSelectedTreatment] = useState<Treatment | null>(null);
   const [activeCategory, setActiveCategory] = useState('All Conditions');
+  const [loadedImages, setLoadedImages] = useState<Record<string, boolean>>({});
+
+  const handleImageLoaded = (id: string) => {
+    setLoadedImages((prev) => (prev[id] ? prev : { ...prev, [id]: true }));
+  };
+
+  // Proactively warm up treatment images during idle time so mobile scrolling has 0ms latency
+  useEffect(() => {
+    let idleId: number | undefined;
+    let timerId: ReturnType<typeof setTimeout> | undefined;
+
+    const warmUpImages = () => {
+      const isMobile = typeof window !== 'undefined' && window.innerWidth < 640;
+      treatmentsData.slice(0, 16).forEach((item) => {
+        const img = new Image();
+        img.decoding = 'async';
+        const suffix = isMobile ? '-mobile.webp' : '.webp';
+        img.src = item.imageUrl.replace(/\.(jpg|jpeg)$/, suffix);
+      });
+    };
+
+    if ('requestIdleCallback' in window) {
+      idleId = window.requestIdleCallback(warmUpImages, { timeout: 1500 });
+    } else {
+      timerId = setTimeout(warmUpImages, 600);
+    }
+
+    return () => {
+      if (idleId && 'cancelIdleCallback' in window) {
+        window.cancelIdleCallback(idleId);
+      }
+      if (timerId) {
+        clearTimeout(timerId);
+      }
+    };
+  }, []);
 
   const filteredTreatments = useMemo(() => {
     return treatmentsData.filter((item) => {
@@ -89,6 +125,8 @@ export const Treatments: React.FC<TreatmentsProps> = React.memo(({ onBookConsult
       return true;
     });
   }, [activeCategory]);
+
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 640;
 
   return (
     <section id="treatments" className="py-20 lg:py-28 bg-[#F5F2EA] border-t border-[#E8E1D5] relative">
@@ -139,12 +177,13 @@ export const Treatments: React.FC<TreatmentsProps> = React.memo(({ onBookConsult
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7">
             {filteredTreatments.map((item, index) => {
               const Icon = iconMap[item.iconName] || ShieldPlus;
+              const hasLoaded = loadedImages[item.id];
               return (
                 <ScrollReveal
                   key={item.id}
                   direction="up"
-                  distance={24}
-                  delay={Math.min(index * 40, 400)}
+                  distance={isMobile ? 12 : 24}
+                  delay={isMobile ? 0 : Math.min(index * 35, 300)}
                   className="h-full"
                 >
                   <div className="h-full rounded-2xl bg-[#FAF8F5] border border-[#E2DBD0] hover:border-[#153A2A]/40 overflow-hidden flex flex-col justify-between transition-all duration-300 hover:shadow-lg group shadow-xs">
@@ -162,8 +201,26 @@ export const Treatments: React.FC<TreatmentsProps> = React.memo(({ onBookConsult
                       className="h-full w-full flex flex-col justify-between cursor-pointer focus-visible:outline-2 focus-visible:outline-[#153A2A]"
                     >
                       {/* Top: Image Section with Tag Badge & Icon Overlay */}
-                      <div className="relative aspect-16/10 w-full overflow-hidden bg-[#E2DBD0]">
+                      <div className="relative aspect-16/10 w-full overflow-hidden bg-[#E7E1D4]">
+                        {/* Shimmer skeleton placeholder */}
+                        {!hasLoaded && (
+                          <div className="absolute inset-0 bg-gradient-to-r from-[#E7E1D4] via-[#EFE9DD] to-[#E7E1D4] animate-pulse pointer-events-none" />
+                        )}
+
                         <picture className="w-full h-full block">
+                          {/* Mobile WebP (400px width - ~8-15KB ultra-fast load) */}
+                          <source
+                            media="(max-width: 640px)"
+                            srcSet={item.imageUrl.replace(/\.(jpg|jpeg)$/, '-mobile.webp')}
+                            type="image/webp"
+                          />
+                          {/* Mobile JPG Fallback */}
+                          <source
+                            media="(max-width: 640px)"
+                            srcSet={item.imageUrl.replace(/\.(jpg|jpeg)$/, '-mobile.jpg')}
+                            type="image/jpeg"
+                          />
+                          {/* Desktop WebP */}
                           <source
                             srcSet={item.imageUrl.replace(/\.(jpg|jpeg)$/, '.webp')}
                             type="image/webp"
@@ -173,8 +230,10 @@ export const Treatments: React.FC<TreatmentsProps> = React.memo(({ onBookConsult
                             alt={item.imageAlt || item.name}
                             width={736}
                             height={460}
-                            loading={index < 8 ? 'eager' : 'lazy'}
+                            loading={index < 4 ? 'eager' : 'lazy'}
+                            fetchPriority={index < 2 ? 'high' : 'auto'}
                             decoding="async"
+                            onLoad={() => handleImageLoaded(item.id)}
                             onError={(e) => {
                               const target = e.currentTarget;
                               const parent = target.parentElement;
@@ -186,7 +245,9 @@ export const Treatments: React.FC<TreatmentsProps> = React.memo(({ onBookConsult
                                 target.src = item.fallbackImageUrl;
                               }
                             }}
-                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-108"
+                            className={`w-full h-full object-cover transition-all duration-500 group-hover:scale-108 ${
+                              hasLoaded ? 'opacity-100 scale-100' : 'opacity-90'
+                            }`}
                           />
                         </picture>
 

@@ -48,6 +48,11 @@ export const TreatmentDetailModal: React.FC<TreatmentDetailModalProps> = ({
         <div className="relative h-44 sm:h-52 w-full overflow-hidden shrink-0">
           <picture className="w-full h-full block">
             <source
+              media="(max-width: 640px)"
+              srcSet={treatment.imageUrl.replace(/\.(jpg|jpeg)$/, '-mobile.webp')}
+              type="image/webp"
+            />
+            <source
               srcSet={treatment.imageUrl.replace(/\.(jpg|jpeg)$/, '.webp')}
               type="image/webp"
             />
