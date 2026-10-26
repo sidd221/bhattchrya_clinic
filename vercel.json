@@ -3,7 +3,89 @@
   "buildCommand": "vite build",
   "outputDirectory": "dist",
   "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/home",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.bhattacharyyaclinic.com"
+        }
+      ],
+      "destination": "https://bhattacharyyaclinic.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "bhattacharyaclinic.com"
+        }
+      ],
+      "destination": "https://bhattacharyyaclinic.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.bhattacharyaclinic.com"
+        }
+      ],
+      "destination": "https://bhattacharyyaclinic.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "bhattachatys-clinic.vercel.app"
+        }
+      ],
+      "destination": "https://bhattacharyyaclinic.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "bhattacharyaclinic.vercel.app"
+        }
+      ],
+      "destination": "https://bhattacharyyaclinic.com/:path*",
+      "permanent": true
+    }
+  ],
   "headers": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": ".*\\.vercel\\.app"
+        }
+      ],
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    },
     {
       "source": "/sitemap.xml",
       "headers": [
